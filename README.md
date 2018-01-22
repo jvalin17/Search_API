@@ -3,7 +3,7 @@
 #### Element Search API 
 
 #### Requirements: 
-Language - Python 2.7, Javascript, HTML, SQLite3  
+Language & Tools - Python 2.7, Javascript, HTML, SQLite3  
 Framework - Flask  
 
 
