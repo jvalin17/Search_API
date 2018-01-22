@@ -3,17 +3,17 @@
 #### Element Search API 
 
 #### Requirements: 
-Language - Python 2.7, Javascript, HTML, SQLite3 
-Framework - Flask 
+Language - Python 2.7, Javascript, HTML, SQLite3  
+Framework - Flask  
 
 
 #### SQL Schema 
 
-CREATE TABLE `Chem_data` (
-	`Chemical_formula` TEXT NOT NULL,
-	`Band_gap` real NOT NULL,
-	`Color` TEXT NOT NULL,
-	PRIMARY KEY (`Chemical_formula`)
+CREATE TABLE `Chem_data` ( 
+	`Chemical_formula` TEXT NOT NULL, 
+	`Band_gap` real NOT NULL, 
+	`Color` TEXT NOT NULL, 
+	PRIMARY KEY (`Chemical_formula`) 
 );
 
 
