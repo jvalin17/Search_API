@@ -1,0 +1,141 @@
+<html lang="en">
+  <head>
+    <title>Extra features</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+      
+  
+  </head>
+
+  <body>
+
+    <h1>Search Filters</h1>
+
+
+    <br>
+    <form name = "myForm" id="myForm" method="POST" action="/elementSearch" >
+      <input type="radio" name="radioButton"  value="elementFormula"  id ="elementFormulaId" onclick="showHide()"/> Element Formula<br>
+       <div class = "form-group col-md-6" id="dvElementFormula" style="display: none" >
+        <input type="text" class="col-md-6 form-control" id= "elementFormula" name="elementFormula" /><br>
+       </div>
+      <br>
+     <input type="radio" name="radioButton" value="property"  id ="propertyId" onclick="showHide()"/> Properties<br>
+
+
+
+    <div id="dvProperties" class="form-check" style="display: none">
+    <br>
+    <label class="form-check-label">
+    <input type="checkbox" class="form-check-input" name="bandgapchbox" id="bandGapId" value="Band_Gap" onclick="showHide()" /> Band Gap
+    </label>
+    <br>
+  
+
+    
+    <div id="dvBandGapRange" class="form-check" style="display: none">
+        <label for="supp" class="sr-only">Start Range</label>
+        <input type="number" id = "startrange" step="any" name = "startrange" placeholder="0" autofocus>
+        <label for="supp" class="sr-only">End Range</label>
+        <input type="number" id = "endrange" step="any" name="endrange" placeholder="0" autofocus>
+    </div>
+
+    <br>
+    
+    
+    <label for="chkColor" class="form-check-label">
+      <input type="checkbox" class="form-check-input" name="colorchbox" id="colorId" onclick="showHide()" /> Color
+    </label>
+
+    <br><br>
+
+    <div id="dvColor" style="position:relative;width:200px;height:25px;border:0;padding:0;margin:0;">
+  <select style="position:absolute;top:0px;left:0px;width:200px; height:25px;line-height:20px;margin:0;padding:0;"
+          onchange="document.getElementById('displayValue').value=this.options[this.selectedIndex].text; document.getElementById('idValue').value=this.options[this.selectedIndex].value;">
+          <option></option>
+          <option value="White">White</option>
+          <option value="Yellow">Yellow</option>
+          <option value="Ocher">Ocher</option>
+          <option value="Black">Black</option>
+          <option value="Dark Brown">Dark Brown</option>
+          <option value="Yellow-White">Yellow-White</option>
+          <option value="Orange-Red">Orange-Red</option>
+          <option value="Bluish">Bluish</option>
+          <option value="Brown-Black">Brown-Black</option>
+          <option value="Black">Black</option>
+          <option value="Gray">Gray</option>
+          <option value="Orange">Orange</option>
+          <option value="Amber">Amber</option>
+          <option value="Brown">Brown</option>
+          <option value="Dark Red">Dark Red</option>
+          <option value="Dark Green">Dark Green</option>
+          <option value="Red-Yellow">Red-Yellow</option>
+          <option value="Violet">Violet</option>
+          <option value="Light Gray">Light Gray</option>
+          <option value="Dark Gray">Dark Gray</option>
+  </select>
+  <input type="text" name="colordisplayValue" id="displayValue" 
+         placeholder="add/select a value" onfocus="this.select()"
+         style="position:absolute;top:0px;left:0px;width:183px;width:180px\9;#width:180px;height:23px; height:21px\9;#height:18px;border:1px solid #556;"  >
+  <input name="idValue" id="idValue" type="hidden">
+  </div>
+
+    
+  </div>  
+
+  
+    <br>
+ 
+  <input type="Submit" class="btn btn-primary" value="Submit">
+    </form>
+  
+  
+
+  <script type="text/javascript">
+
+
+      function showHide() {
+
+        var dvElementFormula = document.getElementById("dvElementFormula");
+        dvElementFormula.style.display = document.getElementById("elementFormulaId").checked ? "block" : "none";
+        document.getElementById("elementFormula").value= document.getElementById("elementFormulaId").checked ? document.getElementById("elementFormula").value : ""
+        
+        
+        var dvProperties = document.getElementById("dvProperties");
+        dvProperties.style.display= document.getElementById("propertyId").checked ? "block" : "none";
+
+
+        var dvBandGapRange = document.getElementById("dvBandGapRange");
+        dvBandGapRange.style.display = document.getElementById("bandGapId").checked ? "block" : "none";
+        
+        
+        if(!document.getElementById("propertyId").checked){
+          document.getElementById("bandGapId").checked = false
+          document.getElementById("startrange").value = ""
+          document.getElementById("endrange").value = ""
+        }
+
+        if(document.getElementById("bandGapId").checked){
+          document.getElementById("startrange").required = true
+          document.getElementById("endrange").required = true
+        } else{
+          document.getElementById("startrange").required = false
+          document.getElementById("endrange").required = false
+        }
+
+        var dvColor = document.getElementById("dvColor");
+        dvColor.style.display = document.getElementById("colorId").checked ? "block" : "none";
+        if(!document.getElementById("propertyId").checked){
+          document.getElementById("colorId").checked = false
+          document.getElementById("colordisplayValue").value = ""
+        }
+        
+
+      }
+
+
+  </script>
+</body>
+</html>
+
+
+

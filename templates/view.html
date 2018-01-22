@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+<h2> Elements </h2>
+{% block content %}
+  <table class="table table-striped">
+  	<thead>
+  		<tr>
+  			<th>Chemical Formula </th>
+  			<th>Band Gap</th>
+  			<th>Color</th>
+  		</tr>
+  	</thead>
+  	<tbody>
+  		{% for n in r1 %}
+  		<tr>
+  			<td>{{n[0]}}</td>
+  			<td>{{n[1]}}</td>
+  			<td>{{n[2]}}</td>
+  		</tr>
+  		{% endfor %}		
+  	</tbody>
+  </table>
+  {% endblock %}  
+
+<button onclick="location.href = 'http://127.0.0.1:5002/';" id="myButton" class="btn btn-primary" >Home</button>
+</body>
+</html>
