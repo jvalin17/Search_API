@@ -30,9 +30,9 @@ CREATE TABLE `Chem_data` (
 
 You can search elements in 2 ways: 
 1. Using element Formula 
-2. Using property characteristics —  
-     a) Band Gap - give start range and end range number as input. 
-     b) Color - Select from drop down/Enter text.  
+2. Using property characteristics —   
+     a) Band Gap - give start range and end range number as input.  
+     b) Color - Select from drop down/Enter text.   
 
 
 #### Output/Result 
