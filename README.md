@@ -7,7 +7,7 @@ Language - Python 2.7, Javascript, HTML, SQLite3
 Framework - Flask 
 
 
-#SQL Schema 
+#### SQL Schema 
 
 CREATE TABLE `Chem_data` (
 	`Chemical_formula` TEXT NOT NULL,
